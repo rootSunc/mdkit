@@ -1,0 +1,43 @@
+{
+  "name": "mdkit",
+  "version": "0.1.0",
+  "description": "A lightweight CLI toolkit for working with Markdown files",
+  "main": "lib/cli.js",
+  "bin": {
+    "mdkit": "bin/mdkit.js"
+  },
+  "scripts": {
+    "test": "mocha test/**/*.test.js"
+  },
+  "keywords": [
+    "markdown",
+    "cli",
+    "toc",
+    "front-matter",
+    "links",
+    "stats"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rootSunc/charlesWiki.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rootSunc/charlesWiki/issues"
+  },
+  "homepage": "https://github.com/rootSunc/charlesWiki#readme",
+  "dependencies": {
+    "commander": "^5.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^7.2.0"
+  }
+}
