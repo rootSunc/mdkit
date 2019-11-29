@@ -15,4 +15,11 @@ describe('utils', function () {
     var files = utils.collectMarkdownFiles(dir);
     assert.ok(files.length >= 2);
   });
+
+  it('parses extra ignore directories', function () {
+    var map = utils.parseIgnoreList('vendor,tmp');
+    assert.strictEqual(map.node_modules, true);
+    assert.strictEqual(map.vendor, true);
+    assert.strictEqual(map.tmp, true);
+  });
 });
