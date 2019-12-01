@@ -38,4 +38,14 @@ describe('toc', function () {
     assert.ok(content.indexOf('- [Alpha](#alpha)') !== -1);
     assert.ok(content.indexOf('<!-- tocstop -->') !== -1);
   });
+
+  it('updates toc for every markdown file in a directory', function () {
+    var dir = fs.mkdtempSync(path.join(os.tmpdir(), 'mdkit-'));
+    fs.writeFileSync(path.join(dir, 'a.md'), '# A\n\n## One\n', 'utf8');
+    fs.writeFileSync(path.join(dir, 'b.md'), '# B\n\n## Two\n', 'utf8');
+    var results = toc.generateMany(dir, { write: true });
+    assert.strictEqual(results.length, 2);
+    assert.ok(results[0].changed);
+    assert.ok(results[1].changed);
+  });
 });
