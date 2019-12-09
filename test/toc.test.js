@@ -23,6 +23,18 @@ describe('toc', function () {
     assert.ok(body.indexOf('- [Two](#two)') !== -1);
   });
 
+  it('deduplicates repeated heading slugs', function () {
+    var body = toc.buildToc(
+      [
+        { level: 2, text: 'Intro' },
+        { level: 2, text: 'Intro' }
+      ],
+      2
+    );
+    assert.ok(body.indexOf('- [Intro](#intro)') !== -1);
+    assert.ok(body.indexOf('- [Intro](#intro-2)') !== -1);
+  });
+
   it('inserts toc markers into a file', function () {
     var dir = fs.mkdtempSync(path.join(os.tmpdir(), 'mdkit-'));
     var file = path.join(dir, 'doc.md');
