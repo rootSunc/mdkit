@@ -29,12 +29,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rootSunc/charlesWiki.git"
+    "url": "git+https://github.com/rootSunc/mdkit.git"
   },
   "bugs": {
-    "url": "https://github.com/rootSunc/charlesWiki/issues"
+    "url": "https://github.com/rootSunc/mdkit/issues"
   },
-  "homepage": "https://github.com/rootSunc/charlesWiki#readme",
+  "homepage": "https://github.com/rootSunc/mdkit#readme",
   "dependencies": {
     "commander": "^5.1.0"
   },
