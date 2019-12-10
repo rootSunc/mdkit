@@ -1,13 +1,14 @@
 {
   "name": "mdkit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A lightweight CLI toolkit for working with Markdown files",
   "main": "lib/cli.js",
   "bin": {
     "mdkit": "bin/mdkit.js"
   },
   "scripts": {
-    "test": "mocha test/**/*.test.js"
+    "test": "mocha test/**/*.test.js",
+    "start": "node bin/mdkit.js --help"
   },
   "keywords": [
     "markdown",
