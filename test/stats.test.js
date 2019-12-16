@@ -24,4 +24,13 @@ describe('stats', function () {
     assert.ok(report.indexOf('words:') !== -1);
     assert.ok(report.indexOf('headings:') !== -1);
   });
+
+  it('estimates reading minutes', function () {
+    assert.strictEqual(stats.readingMinutes(0), 0);
+    assert.strictEqual(stats.readingMinutes(50), 1);
+    assert.strictEqual(stats.readingMinutes(450), 3);
+    var result = stats.analyzeFile(sample);
+    assert.ok(result.readingMinutes >= 1);
+    assert.ok(stats.formatReport(stats.analyze(sample)).indexOf('reading time:') !== -1);
+  });
 });
