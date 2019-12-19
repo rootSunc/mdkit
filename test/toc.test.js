@@ -23,6 +23,21 @@ describe('toc', function () {
     assert.ok(body.indexOf('- [Two](#two)') !== -1);
   });
 
+  it('respects max heading level', function () {
+    var body = toc.buildToc(
+      [
+        { level: 2, text: 'One' },
+        { level: 3, text: 'Nested' },
+        { level: 4, text: 'Deep' }
+      ],
+      2,
+      3
+    );
+    assert.ok(body.indexOf('One') !== -1);
+    assert.ok(body.indexOf('Nested') !== -1);
+    assert.ok(body.indexOf('Deep') === -1);
+  });
+
   it('deduplicates repeated heading slugs', function () {
     var body = toc.buildToc(
       [

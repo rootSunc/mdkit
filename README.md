@@ -41,6 +41,7 @@ mdkit toc examples/demo.md
 mdkit toc ./docs --dry-run
 mdkit toc notes.md --stdout
 mdkit toc notes.md --min-level 2
+mdkit toc notes.md --max-level 3
 ```
 
 ### `mdkit fm <file>`
