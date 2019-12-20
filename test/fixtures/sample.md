@@ -28,3 +28,8 @@ This points to a [missing file](./missing.md).
 ## External
 
 Visit [example](https://example.com).
+
+## Images
+
+![logo](./logo.png)
+![ok](./guide.md)

@@ -26,6 +26,19 @@ describe('links', function () {
       true
     );
   });
+
+  it('flags missing images too', function () {
+    var result = links.check(sample);
+    var imgs = result.results.filter(function (item) {
+      return item.kind === 'image';
+    });
+    assert.ok(imgs.length >= 1);
+    assert.ok(
+      result.broken.some(function (item) {
+        return item.href === './logo.png' && item.kind === 'image';
+      })
+    );
+  });
 });
 
 function fsRead(file) {
