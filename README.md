@@ -57,7 +57,7 @@ mdkit fm post.md --delete draft --dry-run
 
 ### `mdkit links <path>`
 
-Check whether relative local links resolve on disk. External URLs and `#anchors` are ignored. Exits with code `1` when broken links are found.
+Check whether relative local links and images resolve on disk. External URLs and `#anchors` are ignored. Exits with code `1` when broken links are found.
 
 ```bash
 mdkit links ./docs
