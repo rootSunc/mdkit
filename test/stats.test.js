@@ -14,7 +14,7 @@ describe('stats', function () {
 
   it('counts headings and code blocks', function () {
     var result = stats.analyzeFile(sample);
-    assert.strictEqual(result.headings, 8);
+    assert.strictEqual(result.headings, 7);
     assert.strictEqual(result.codeBlocks, 1);
   });
 
