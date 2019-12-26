@@ -44,6 +44,16 @@ mdkit toc notes.md --min-level 2
 mdkit toc notes.md --max-level 3
 ```
 
+
+### `mdkit headings <path>`
+
+List headings with generated slugs (useful before writing a TOC by hand).
+
+```bash
+mdkit headings ./docs
+mdkit headings README.md --json
+```
+
 ### `mdkit fm <file>`
 
 Read or update simple YAML front matter (`key: value` pairs).
