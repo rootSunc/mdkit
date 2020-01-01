@@ -63,6 +63,7 @@ mdkit fm post.md
 mdkit fm post.md --get title
 mdkit fm post.md --set title="Hello"
 mdkit fm post.md --delete draft --dry-run
+mdkit fm post.md --json
 ```
 
 ### `mdkit links <path>`
