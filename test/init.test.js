@@ -24,4 +24,19 @@ describe('init', function () {
     var second = init.scaffold(dir);
     assert.strictEqual(second.created, false);
   });
+
+  it('can scaffold a blog template', function () {
+    var dir = fs.mkdtempSync(path.join(os.tmpdir(), 'mdkit-'));
+    var result = init.scaffold(dir, { template: 'blog' });
+    assert.strictEqual(result.created, true);
+    var content = fs.readFileSync(result.path, 'utf8');
+    assert.ok(content.indexOf('Untitled Post') !== -1);
+    assert.ok(content.indexOf('tags: draft') !== -1);
+  });
+
+  it('rejects unknown templates', function () {
+    var result = init.scaffold('/tmp', { template: 'nope', write: false });
+    assert.strictEqual(result.created, false);
+    assert.ok(result.message.indexOf('unknown template') !== -1);
+  });
 });
