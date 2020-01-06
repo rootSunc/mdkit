@@ -82,6 +82,8 @@ Scaffold a starter notes directory (defaults to `docs/`).
 ```bash
 mdkit init
 mdkit init notes --force
+mdkit init posts --template blog
+mdkit init . --template changelog
 ```
 
 ## Example workflow
