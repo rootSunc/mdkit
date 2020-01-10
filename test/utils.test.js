@@ -5,6 +5,12 @@ var path = require('path');
 var utils = require('../lib/utils');
 
 describe('utils', function () {
+  it('strips inline code', function () {
+    var out = utils.stripInlineCode('use `npm install` please');
+    assert.ok(out.indexOf('npm') === -1);
+    assert.ok(out.indexOf('please') !== -1);
+  });
+
   it('strips fenced code blocks', function () {
     var text = 'before\n```js\ncode\n```\nafter';
     assert.strictEqual(utils.stripCodeBlocks(text), 'before\n\nafter');
