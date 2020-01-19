@@ -27,6 +27,20 @@ describe('links', function () {
     );
   });
 
+  it('can validate heading anchors', function () {
+    var result = links.check(sample, { checkAnchors: true });
+    assert.ok(
+      result.results.some(function (item) {
+        return item.href === '#advanced' && item.ok;
+      })
+    );
+    assert.ok(
+      result.broken.some(function (item) {
+        return item.href === '#nope';
+      })
+    );
+  });
+
   it('flags missing images too', function () {
     var result = links.check(sample);
     var imgs = result.results.filter(function (item) {

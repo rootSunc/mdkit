@@ -11,6 +11,8 @@ Intro paragraph with some English words and 中文内容.
 
 See the [guide](./guide.md) for details.
 
+Jump to [advanced](#advanced) or [missing anchor](#nope).
+
 ### Installation
 
 Run `npm install -g mdkit`.
