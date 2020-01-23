@@ -1,6 +1,6 @@
 # mdkit
 
-A lightweight Node.js CLI for everyday Markdown tasks: table of contents, front matter, local link checks, document stats, and a tiny docs scaffold.
+A lightweight Node.js CLI for everyday Markdown tasks: TOC, front matter, link/image checks, headings, stats, and starter templates.
 
 [![Build Status](https://travis-ci.org/rootSunc/mdkit.svg?branch=master)](https://travis-ci.org/rootSunc/mdkit)
 
@@ -24,11 +24,12 @@ Requires Node.js 10+.
 
 ### `mdkit stats <path>`
 
-Count words (Latin + CJK), headings, code blocks, and lines for a file or directory.
+Count words (Latin + CJK), headings, code blocks, lines, and estimated reading time.
 
 ```bash
 mdkit stats ./docs
 mdkit stats README.md --json
+mdkit stats ./docs --summary
 mdkit stats . --ignore vendor,tmp
 ```
 
@@ -42,6 +43,7 @@ mdkit toc ./docs --dry-run
 mdkit toc notes.md --stdout
 mdkit toc notes.md --min-level 2
 mdkit toc notes.md --max-level 3
+mdkit toc notes.md --remove
 ```
 
 
@@ -73,6 +75,7 @@ Check whether relative local links and images resolve on disk. External URLs and
 ```bash
 mdkit links ./docs
 mdkit links examples/demo.md --json
+mdkit links ./docs --anchors
 ```
 
 ### `mdkit init [dir]`
