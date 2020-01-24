@@ -66,6 +66,20 @@ describe('toc', function () {
     assert.ok(content.indexOf('<!-- tocstop -->') !== -1);
   });
 
+  it('can remove an existing toc block', function () {
+    var dir = fs.mkdtempSync(path.join(os.tmpdir(), 'mdkit-'));
+    var file = path.join(dir, 'doc.md');
+    fs.writeFileSync(
+      file,
+      '# Title\n\n<!-- toc -->\n- [A](#a)\n<!-- tocstop -->\n\n## A\n',
+      'utf8'
+    );
+    var result = toc.removeToc(file, { write: true });
+    assert.ok(result.removed);
+    var content = fs.readFileSync(file, 'utf8');
+    assert.ok(content.indexOf('<!-- toc -->') === -1);
+  });
+
   it('updates toc for every markdown file in a directory', function () {
     var dir = fs.mkdtempSync(path.join(os.tmpdir(), 'mdkit-'));
     fs.writeFileSync(path.join(dir, 'a.md'), '# A\n\n## One\n', 'utf8');
