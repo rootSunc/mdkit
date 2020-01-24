@@ -22,3 +22,7 @@ More detail lives here.
 
 - Working local link: [readme](../README.md)
 - External link: [npm](https://www.npmjs.com/)
+
+## Tips
+
+Try `mdkit headings` and `mdkit stats --summary`.
