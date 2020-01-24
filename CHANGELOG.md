@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented in this file.
 
-## 0.3.0 - 2021-06-12
+## 0.3.0 - 2020-01-20
 
 ### Added
 - Reading time estimates in `stats`
@@ -16,7 +16,7 @@ All notable changes to this project are documented in this file.
 ### Changed
 - Inline code is excluded from word counts
 
-## 0.2.0 - 2020-01-18
+## 0.2.0 - 2019-12-10
 
 ### Added
 - `mdkit init` to scaffold a starter notes directory
