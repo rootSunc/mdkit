@@ -2,8 +2,6 @@
 
 A lightweight Node.js CLI for everyday Markdown tasks: TOC, front matter, link/image checks, headings, stats, and starter templates.
 
-[![Build Status](https://travis-ci.org/rootSunc/mdkit.svg?branch=master)](https://travis-ci.org/rootSunc/mdkit)
-
 ## Install
 
 ```bash
